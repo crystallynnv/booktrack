@@ -1,0 +1,17 @@
+.App {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 50px;
+}
+
+.App-header {
+  background-color: var(--black);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2vmin;
+  font-size: 2.5vmin;
+  color: var(--background);
+}
