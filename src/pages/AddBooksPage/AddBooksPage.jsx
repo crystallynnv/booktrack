@@ -7,7 +7,12 @@ class AddBooksPage extends Component {
       employee: '',
       company: '',
       description: '',
-      date: '04/11/20'
+      date: '',
+      assigned: {
+        type: String,
+        default: 'Not Assigned'
+      },
+      completedDate: ''
     }
   }
 
@@ -30,7 +35,7 @@ render() {
     return (
       <>
         <h3>Add a Book Page</h3>
-        <form class="ui form" ref={this.formRef} autoComplete="off">
+        <form class="ui form" ref={this.formRef} autoComplete="off" onSubmit={this.handleSubmit}>
           <div class="field">
             <label>Received By</label>
             <input 
@@ -50,7 +55,13 @@ render() {
             required></input>
           </div><br/>
           <div class="field"><label>Date Received</label>
-            <input placeholder="Date"></input></div><br/>
+            <input
+            name="date" 
+            type="date"
+            value={this.state.formData.date}
+            onChange={this.handleChange}
+            required
+            ></input></div><br/>
           <div class="field"><label>Description</label>
             <input 
             maxLength="200" 
@@ -59,10 +70,11 @@ render() {
             value={this.state.formData.description}
             required></input>
           </div><br/>
-          <div><button
-          type="submit" 
-          class="ui button" 
-          disabled={this.state.invalidForm}>Add</button>
+          <div>
+            <button
+            type="submit" 
+            class="ui button" 
+            disabled={this.state.invalidForm}>Add</button>
           </div>
         </form>
       </>

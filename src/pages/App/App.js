@@ -1,15 +1,14 @@
 import React, { Component } from 'react';
 import './App.css';
-import { Route, Switch, Redirect } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import SignupPage from '../SignupPage/SignupPage';
 import LoginPage from '../LoginPage/LoginPage';
-import AddBooksPage from '../AddBooksPage/AddBooksPage'
+import AddBooksPage from '../AddBooksPage/AddBooksPage';
+import EditBookPage from '../EditBookPage/EditBookPage';
 import * as booksAPI from '../../services/book-api';
 import * as userAPI from '../../services/user-api';
-// import Book from '../../components/Book/Book'
-import NavBar from '../../components/NavBar/NavBar'
+import NavBar from '../../components/NavBar/NavBar';
 import BookListPage from '../BookListPage/BookListPage';
-// import AddBooksPage from '../AddBooksPage/AddBooksPage';
 
 class App extends Component {
   state = {
@@ -33,6 +32,20 @@ class App extends Component {
     const newBook = await booksAPI.create(newBookData);
     this.setState(state => ({
       books: [...state.books, newBook]
+    }), () => this.props.history.push('/'));
+  }
+
+  handleUpdateBook = async updatedBookData => {
+    const updatedBook = await booksAPI.update(updatedBookData);
+    const newBooksArray = this.state.books.map(b => b._id === updatedBookData._id ? updatedBook : b);
+      this.setState({books: newBooksArray},
+        () => this.props.history.push('/'));
+  }
+
+  handleDeleteBook = async id => {
+    await booksAPI.deleteOne(id);
+    this.setState(state => ({
+      books: state.books.filter(b => b._id !== id)
     }), () => this.props.history.push('/'));
   }
 
@@ -71,13 +84,22 @@ class App extends Component {
             />
           }/>
           <Route exact path='/addBooks' render={() => 
-            userAPI.getUser() ? 
+            // userAPI.getUser() ? 
               <AddBooksPage handleAddBook={this.handleAddBook}/>
-            :
-              <Redirect to='/login'/>
+            // :
+            //   <Redirect to='/login'/>
           }/>
           <Route exact path='/' render={({history}) =>
-            <BookListPage books={this.state.books}/>
+            <BookListPage 
+            books={this.state.books}
+            handleDeleteBook={this.handleDeleteBook}
+            />
+          }/>
+          <Route exact path='/editBook' render={({history, location}) =>
+            <EditBookPage 
+            handleUpdateBook={this.handleUpdateBook}
+            location={location}
+            />
           }/>
         </Switch>
         </main>
