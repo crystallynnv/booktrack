@@ -8,10 +8,7 @@ class AddBooksPage extends Component {
       company: '',
       description: '',
       date: '',
-      assigned: {
-        type: String,
-        default: 'Not Assigned'
-      },
+      assigned: '',
       completedDate: ''
     }
   }

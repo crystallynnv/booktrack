@@ -16,7 +16,14 @@ const bookSchema = new Schema({
   },
   description: {
     type: String,
-    require: true
+    required: true
+  },
+  assigned: {
+    type: String,
+    default: 'Not Assigned'
+  },
+  completedDate: {
+    type: String
   }
 }, {
   timestamps: true

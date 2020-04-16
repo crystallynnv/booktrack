@@ -5,15 +5,16 @@ const booksCtrl = require('../../controllers/books');
 /*------------------------------ Public Routes ------------------------------*/
 
 router.get('/', booksCtrl.index);
-router.post('/', booksCtrl.createBook);
-router.delete('/:id', booksCtrl.delete);
-router.put('/:id', booksCtrl.update);
+
 
 /*----------------------------- Protected Routes ----------------------------*/
 
 // Process the token for only the routes below
 router.use(require('../../config/auth'));
-// router.post('/', checkAuth, booksCtrl.create);
+router.post('/', booksCtrl.createBook);
+router.delete('/:id', booksCtrl.delete);
+router.put('/:id', booksCtrl.update);
+router.post('/', booksCtrl.create);
 
 /*----------------------------- Helper Functions ----------------------------*/
 

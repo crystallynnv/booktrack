@@ -13,20 +13,22 @@ function BookListPage(props) {
                 <tr class="">
                     <th class="">Received by</th>
                     <th class="">Company</th>
-                    <th class="">Date</th>
+                    <th class="">Date Received</th>
                     <th class="">Description</th>
+                    <th class="">Assigned to</th>
+                    <th class="">Completed</th>
                 </tr>
             </thead>
             <tbody class="">
             <tr class="">
-                <td>
+                
                 {props.books.map(book =>
                 <Book 
                 book={book}
                 key={book._id}
                 handleDeleteBook={props.handleDeleteBook}/>
                 )}
-                </td>
+                
             </tr>
             </tbody>
             </table>
