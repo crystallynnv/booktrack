@@ -5,13 +5,13 @@ const Book = ({book, handleDeleteBook}) =>
   
 
   
-  <tr class="">
-    <td class="">{book.employee}</td>
-    <td class="">{book.company}</td>
-    <td class="">{book.date}</td>
-    <td class="">{book.description}</td>
-    <td class="">{book.assigned}</td>
-    <td class="">{book.completedDate}</td>
+  <tr>
+    <td>{book.employee}</td>
+    <td>{book.company}</td>
+    <td>{book.date}</td>
+    <td>{book.description}</td>
+    <td>{book.assigned}</td>
+    <td>{book.completedDate}</td>
     <td>
       <Link
             className='btn btn-xs btn-warning'
@@ -20,7 +20,7 @@ const Book = ({book, handleDeleteBook}) =>
                     state: {book}
             }}>Edit</Link>
     </td>
-    <td><button class="ui button"
+    <td><button className="ui button"
     onClick={() => handleDeleteBook(book._id)}>X</button></td>
   </tr>
 

@@ -10,22 +10,21 @@ function BookListPage(props) {
     return (
         <>
             <h3>Bookkeeping List Page</h3>
-            <div>
-                  
-            <table class="ui celled table">
-            <thead class="">
-                <tr class="">
-                    <th class="">Received by</th>
-                    <th class="">Company</th>
-                    <th class="">Date Received</th>
-                    <th class="">Description</th>
-                    <th class="">Assigned to</th>
-                    <th class="">Completed</th>
-                    <th class="">Update</th>
-                    <th class="">Delete</th>
+            <div>   
+            <table className="ui celled table">
+            <thead>
+                <tr>
+                    <th>Received by</th>
+                    <th>Company</th>
+                    <th>Date Received</th>
+                    <th>Description</th>
+                    <th>Assigned to</th>
+                    <th>Completed</th>
+                    <th>Update</th>
+                    <th>Delete</th>
                 </tr>
             </thead>
-            <tbody class="">
+            <tbody>
                 {props.books.map(book =>
                 <Book 
                 book={book}
