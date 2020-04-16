@@ -21,19 +21,17 @@ function BookListPage(props) {
                     <th class="">Description</th>
                     <th class="">Assigned to</th>
                     <th class="">Completed</th>
+                    <th class="">Update</th>
+                    <th class="">Delete</th>
                 </tr>
             </thead>
             <tbody class="">
-            <tr class="">
-                
                 {props.books.map(book =>
                 <Book 
                 book={book}
                 key={book._id}
                 handleDeleteBook={props.handleDeleteBook}/>
                 )}
-                
-            </tr>
             </tbody>
             </table>
             </div>

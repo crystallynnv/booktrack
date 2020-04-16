@@ -3,16 +3,8 @@ import {Link} from 'react-router-dom';
 
 const Book = ({book, handleDeleteBook}) => 
   
-<table class="">
-  {/* <thead class="">
-    <tr class="">
-      <th class="">Received by</th>
-      <th class="">Company</th>
-      <th class=""></th>
-      <th class="">Description</th>
-    </tr>
-</thead>*/}
-  <tbody class=""> 
+
+  
   <tr class="">
     <td class="">{book.employee}</td>
     <td class="">{book.company}</td>
@@ -31,9 +23,6 @@ const Book = ({book, handleDeleteBook}) =>
     <td><button class="ui button"
     onClick={() => handleDeleteBook(book._id)}>X</button></td>
   </tr>
-
-  </tbody>
-  </table>
 
 
 

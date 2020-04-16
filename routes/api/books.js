@@ -14,7 +14,6 @@ router.get('/', checkAuth, booksCtrl.index);
 router.post('/', checkAuth, booksCtrl.createBook);
 router.delete('/:id', checkAuth, booksCtrl.delete);
 router.put('/:id', checkAuth, booksCtrl.update);
-// router.post('/', checkAuth, booksCtrl.create);
 
 /*----------------------------- Helper Functions ----------------------------*/
 
