@@ -3,6 +3,10 @@ import './BookListPage.css';
 import Book from '../../components/Book/Book';
 
 function BookListPage(props) {
+    if(props.books.length) {
+
+    
+
     return (
         <>
             <h3>Bookkeeping List Page</h3>
@@ -35,6 +39,12 @@ function BookListPage(props) {
             </div>
         </>
     )
+    } else {
+        return(
+            <h3>No Books Listed Yet</h3>
+
+        )
+    }
 }
 
 export default BookListPage;

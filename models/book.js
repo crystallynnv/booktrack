@@ -24,6 +24,10 @@ const bookSchema = new Schema({
   },
   completedDate: {
     type: String
+  }, 
+  user: {
+    type: Schema.Types.ObjectId,
+    ref: "User"
   }
 }, {
   timestamps: true
