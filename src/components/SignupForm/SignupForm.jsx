@@ -40,9 +40,9 @@ class SignupForm extends Component {
   render() {
     return (
       <div>
-        <header>Sign Up</header>
-        <form onSubmit={this.handleSubmit} >
-          <div>
+        <h3>Sign Up</h3> <br/>
+        <form className="ui form" onSubmit={this.handleSubmit} >
+          <div className="field">
             <input 
               type="text"
               placeholder="Name" 
@@ -51,7 +51,7 @@ class SignupForm extends Component {
               onChange={this.handleChange} 
             />
           </div>
-          <div>
+          <div className="field">
             <input 
               type="email"
               placeholder="Email" 
@@ -60,7 +60,7 @@ class SignupForm extends Component {
               onChange={this.handleChange}
             />
           </div>
-          <div>
+          <div className="field">
             <input 
               type="password" 
               placeholder="Password" 
@@ -69,7 +69,7 @@ class SignupForm extends Component {
               onChange={this.handleChange} 
             />
           </div>
-          <div className="form-group">
+          <div className="form-group field">
             <input 
               type="password" 
               placeholder="Confirm Password" 
@@ -80,7 +80,7 @@ class SignupForm extends Component {
           </div>
           <div>
             <button 
-              className="btn btn-default" 
+              className="ui button" 
               disabled={this.isFormInvalid()}       
             >
               Sign Up

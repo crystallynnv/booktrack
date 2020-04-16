@@ -5,8 +5,6 @@ import Book from '../../components/Book/Book';
 function BookListPage(props) {
     if(props.books.length) {
 
-    
-
     return (
         <>
             <h3>Bookkeeping List Page</h3>
@@ -38,8 +36,7 @@ function BookListPage(props) {
     )
     } else {
         return(
-            <h3>No Books Listed Yet</h3>
-
+            <h5>Start Tracking Your Bookkeeping by Logging in and Clicking the Add Link!</h5>
         )
     }
 }

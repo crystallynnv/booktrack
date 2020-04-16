@@ -31,7 +31,7 @@ class AddBooksPage extends Component {
 render() {
     return (
       <>
-        <h3>Add a Book Page</h3>
+        <h3>Add a Book</h3><br/>
         <form class="ui form" ref={this.formRef} autoComplete="off" onSubmit={this.handleSubmit}>
           <div class="field">
             <label>Received By</label>

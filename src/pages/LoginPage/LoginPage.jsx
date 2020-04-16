@@ -34,9 +34,9 @@ class LoginPage extends Component {
   render() {
     return (
       <div className="LoginPage">
-        <header>Log In</header>
-        <form onSubmit={this.handleSubmit} >
-          <div>
+        <h3>Log In</h3><br/>
+        <form className="ui form" onSubmit={this.handleSubmit} >
+          <div className="field">
             <input 
               type="email" 
               placeholder="Email"
@@ -45,7 +45,7 @@ class LoginPage extends Component {
               onChange={this.handleChange} 
             />
           </div>
-          <div>
+          <div className="field">
             <input 
               type="password"
               placeholder="Password" 
@@ -55,7 +55,7 @@ class LoginPage extends Component {
             />
           </div>
           <div>
-            <button>Log In</button>
+            <button className="ui button">Log In</button>
             &nbsp;&nbsp;&nbsp;
             <Link to='/'>Cancel</Link>
           </div>
