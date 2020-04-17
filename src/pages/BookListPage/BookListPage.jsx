@@ -30,6 +30,7 @@ function BookListPage(props) {
                 handleDeleteBook={props.handleDeleteBook}/>
                 )}
             </tbody>
+            
             </table>
             </div>
         </>

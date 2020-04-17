@@ -2,23 +2,30 @@
 # BookTrack
 
 
-README Requirements
-Don't underestimate the value of a well crafted README.md.
+### Description
 
-The README.md introduces your project to prospective employers and forms their first impression of your work!
+BookTrack was created to help Bookkeepers track their bookkeeping. BookTrack allows you to add a book by and update it to know who you assigned it to.
 
-Note: Do not include project planning (user stories, wireframes or ERDs) in the README.md.
+### Screenshots: 
+![Home Page](public/screenshotmain.png)
 
-Include the following sections within the README.md:
+![Add a Book Page](public/screenshotadd.png)
 
-☐ App Title: Contains a description of what the app does and optional background info.
+### Technologies Used: 
+    * React
+    * Node
+    * Mongoose
+    * Chajr
 
-☐ Screenshot(s): A screenshot of your app's landing page and any other screenshots of interest.
+### Getting Started: 
 
-☐ Technologies Used: List of the technologies used.
+[A link to the App](https://booktrack1.herokuapp.com/)
 
-☐ Getting Started: That Includes:
+[Trello](https://trello.com/b/dcMyTCvB/into-the-unknown-travel-app)
 
-A link to the deployed app (Heroku)
-A link to the Trello board used for the project's planning that includes user stories, wireframes & an ERD.
-☐ Next Steps: Planned future enhancements (icebox items).
+
+### Next Steps: 
+
+- [ ] Search tab to search the books by company name and by received date
+
+

@@ -55,6 +55,13 @@ class SearchPage extends Component {
                 onChange={this.handleChange}
                 ></input>
             </div>
+
+            // if(this.state.filtered.length){
+            //     <div>
+            //     </div>
+            // } else {
+
+            // }
         )
     }
 }
