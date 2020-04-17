@@ -5,6 +5,7 @@ import SignupPage from '../SignupPage/SignupPage';
 import LoginPage from '../LoginPage/LoginPage';
 import AddBooksPage from '../AddBooksPage/AddBooksPage';
 import EditBookPage from '../EditBookPage/EditBookPage';
+import SearchPage from '../SearchPage/SearchPage';
 import * as booksAPI from '../../services/book-api';
 import * as userAPI from '../../services/user-api';
 import NavBar from '../../components/NavBar/NavBar';
@@ -98,6 +99,12 @@ class App extends Component {
           <Route exact path='/editBook' render={({history, location}) =>
             <EditBookPage 
             handleUpdateBook={this.handleUpdateBook}
+            location={location}
+            />
+          }/>
+          <Route exact path='/search' render={({history, location}) =>
+            <SearchPage 
+            books={this.state.books}
             location={location}
             />
           }/>
