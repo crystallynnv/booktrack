@@ -4,15 +4,18 @@ class SearchPage extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            filtered: []
+            query: '',
+            results: {},
+            loading: false
         }
     }
+    
 
     handleChange(e) {
         let currentList = [];
         let newList = [];
         if (e.target.value !== "") {
-            currentList = this.props.items;
+            currentList = this.props.books.company;
             newList = currentList.filter(item => {
                 // change current item to lowercase
             const lc = item.toLowerCase();
@@ -25,7 +28,7 @@ class SearchPage extends Component {
             });
         } else {
             // If the search bar is empty, set newList to original task list
-            newList = this.props.items;
+            newList = this.props.books.company;
         }
         // Set the filtered state based on what our rules added to newList
         this.setState({
@@ -35,13 +38,13 @@ class SearchPage extends Component {
 
     componentDidMount() {
         this.setState({
-            filtered: this.props.items
+            filtered: this.props.books.company
         })
     }
 
     componentWillReceiveProps(nextProps) {
         this.setState({
-            filtered: nextProps.items
+            filtered: nextProps.books.company
         })
     }
 
@@ -51,9 +54,22 @@ class SearchPage extends Component {
                 <label></label>
                 <input
                 type="text"
+                value=""
                 placeholder="Search"
                 onChange={this.handleChange}
                 ></input>
+            
+                {/* <ul>
+						{this.state.filtered.map(item => (
+							<li key={item}>
+								{item} &nbsp;
+								<span
+									className="delete"
+									onClick={() => this.props.delete(item)}
+									/>
+							</li>
+						))}
+					</ul> */}
             </div>
 
             // if(this.state.filtered.length){
@@ -63,6 +79,7 @@ class SearchPage extends Component {
 
             // }
         )
+       
     }
 }
 

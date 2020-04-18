@@ -84,17 +84,20 @@ class App extends Component {
               handleSignupOrLogin={this.handleSignupOrLogin}
             />
           }/>
+            <Route exact path='/' render={({history, location}) =>
+              <BookListPage 
+              books={this.state.books}
+              handleDeleteBook={this.handleDeleteBook}
+              user={this.state.user}
+              history={history}
+              location={location}
+              />
+            }/>
+            
           <Route exact path='/addBooks' render={() => 
             // userAPI.getUser() ? 
               <AddBooksPage handleAddBook={this.handleAddBook}/>
-            // :
-            //   <Redirect to='/login'/>
-          }/>
-          <Route exact path='/' render={({history}) =>
-            <BookListPage 
-            books={this.state.books}
-            handleDeleteBook={this.handleDeleteBook}
-            />
+            
           }/>
           <Route exact path='/editBook' render={({history, location}) =>
             <EditBookPage 
@@ -105,7 +108,7 @@ class App extends Component {
           <Route exact path='/search' render={({history, location}) =>
             <SearchPage 
             books={this.state.books}
-            location={location}
+            
             />
           }/>
         </Switch>

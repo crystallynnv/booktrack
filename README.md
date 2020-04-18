@@ -11,11 +11,14 @@ BookTrack was created to help Bookkeepers track their bookkeeping. BookTrack all
 
 ![Add a Book Page](public/screenshotadd.png)
 
+![Edit Page]()
+
 ### Technologies Used: 
     * React
     * Node
     * Mongoose
     * Chajr
+  
 
 ### Getting Started: 
 
