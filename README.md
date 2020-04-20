@@ -4,20 +4,23 @@
 
 ### Description
 
-BookTrack was created to help Bookkeepers track their bookkeeping. BookTrack allows you to add a book by and update it to know who you assigned it to.
+BookTrack was created to help Bookkeepers track their bookkeeping. Once a book is received, you can add it to your index. The next step is to assign it to a bookkeeper to work on it which you can update it by clicking the edit button. You can update one last time to add in the completed date. 
 
 ### Screenshots: 
 ![Home Page](public/screenshotmain.png)
 
 ![Add a Book Page](public/screenshotadd.png)
 
-![Edit Page]()
+![Edit Page](public/screenshotedit.png)
 
 ### Technologies Used: 
-    * React
-    * Node
-    * Mongoose
-    * Chajr
+- React
+- Node
+- Express
+- Mongoose
+- HTML
+- CSS
+- Chajr
   
 
 ### Getting Started: 
