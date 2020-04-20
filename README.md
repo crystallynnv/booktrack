@@ -21,6 +21,8 @@ BookTrack was created to help Bookkeepers track their bookkeeping. Once a book i
 - HTML
 - CSS
 - Chajr
+- Semanic UI React
+- Bootstrap
   
 
 ### Getting Started: 
