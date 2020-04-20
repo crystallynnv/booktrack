@@ -73,7 +73,7 @@ class EditBookPage extends Component {
                 name="completedDate"
                 onChange={this.handleChange}
                 value={this.state.formData.completedDate}
-                required></input>
+                ></input>
               </div><br/>
               <div>
                 <button
