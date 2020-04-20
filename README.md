@@ -27,9 +27,9 @@ BookTrack was created to help Bookkeepers track their bookkeeping. Once a book i
 
 ### Getting Started: 
 
-[A link to the App](https://booktrack1.herokuapp.com/)
+[Link to the App](https://booktrack1.herokuapp.com/)
 
-[Trello](https://trello.com/b/PlpP16sB/booktrack)
+[Link to Trello Board](https://trello.com/b/PlpP16sB/booktrack)
 
 
 ### Next Steps: 
