@@ -51,14 +51,14 @@ class SearchPage extends Component {
     render() {
         return(
             <div className="ui input">
-                <label></label>
+                {/* <label >Company Name</label>
                 <input
                 type="text"
                 value=""
                 placeholder="Search"
                 onChange={this.handleChange}
-                ></input>
-            
+                ></input> */}
+            <h3>Coming Soon!</h3>
                 {/* <ul>
 						{this.state.filtered.map(item => (
 							<li key={item}>

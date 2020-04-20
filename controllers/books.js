@@ -8,16 +8,19 @@ module.exports = {
 };
 
 async function update(req, res) {
+  req.body.user = req.user._id
   const updatedBook = await Book.findByIdAndUpdate(req.params.id, req.body, {new: true});
   res.status(200).json(updatedBook);
 }
 
 async function deleteOne(req, res) {
+  req.body.user = req.user._id
   const deletedBook = await Book.findByIdAndRemove(req.params.id);
   res.status(200).json(deletedBook);
 }
 
 async function index(req, res) {
+  req.body.user = req.user._id
   const books = await Book.find({user: req.user._id});
   res.status(200).json(books);
 
