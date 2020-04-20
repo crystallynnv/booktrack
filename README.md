@@ -27,11 +27,12 @@ BookTrack was created to help Bookkeepers track their bookkeeping. Once a book i
 
 [A link to the App](https://booktrack1.herokuapp.com/)
 
-[Trello](https://trello.com/b/dcMyTCvB/into-the-unknown-travel-app)
+[Trello](https://trello.com/b/PlpP16sB/booktrack)
 
 
 ### Next Steps: 
 
 - [ ] Search tab to search the books by company name and by received date
+- [ ] Add a sort button on the index page to sort by Company Name
 
 
