@@ -12,7 +12,6 @@ export function getAll() {
 }
 
 export function create(book) {
-  console.log(book, 'BOOK')
   return fetch(BASE_URL, {
       method: 'POST',
       headers: {'content-type': 'application/json', 'Authorization': 'Bearer ' + tokenService.getToken()},
@@ -21,7 +20,6 @@ export function create(book) {
 }
 
 export function update(book) {
-  console.log(book, 'BOOK')
   return fetch(`${BASE_URL}/${book._id}`, {
       method: 'PUT',
       headers: {'content-type': 'application/json', 'Authorization': 'Bearer ' + tokenService.getToken()},

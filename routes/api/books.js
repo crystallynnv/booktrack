@@ -18,9 +18,7 @@ router.put('/:id', checkAuth, booksCtrl.update);
 /*----------------------------- Helper Functions ----------------------------*/
 
 function checkAuth(req, res, next) {
-  console.log('checkAuth');
   if (req.user._id) return next();
-  console.log('after if');
   return res.status(401).json({msg: 'Not Authorized'});
 }
 
