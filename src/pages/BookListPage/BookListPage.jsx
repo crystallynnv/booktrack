@@ -1,6 +1,7 @@
 import React from 'react';
 import './BookListPage.css';
 import Book from '../../components/Book/Book';
+import SearchBar from '../SearchBar/SearchBar';
 
 function BookListPage(props) {
 
@@ -8,6 +9,9 @@ function BookListPage(props) {
 
     return (
         <>
+        <SearchBar 
+            handleSearch={(e) => props.handleSearch(e)}
+            searchedWord={props.searchedWord}/>
             <h3>Bookkeeping List Page</h3>
             <div>   
             <table className="ui celled table">
@@ -28,6 +32,7 @@ function BookListPage(props) {
                 <Book 
                 book={book}
                 key={book._id}
+                user={props.user}
                 handleDeleteBook={props.handleDeleteBook}/>
                 )}
             </tbody>

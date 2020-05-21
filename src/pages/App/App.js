@@ -5,7 +5,7 @@ import SignupPage from '../SignupPage/SignupPage';
 import LoginPage from '../LoginPage/LoginPage';
 import AddBooksPage from '../AddBooksPage/AddBooksPage';
 import EditBookPage from '../EditBookPage/EditBookPage';
-import SearchPage from '../SearchPage/SearchPage';
+
 import * as booksAPI from '../../services/book-api';
 import * as userAPI from '../../services/user-api';
 import NavBar from '../../components/NavBar/NavBar';
@@ -15,7 +15,9 @@ class App extends Component {
   state = {
     // Initialize user if there's a token, otherwise null
     user: userAPI.getUser(),
-    books: []
+    books: [],
+    searchedBooks: [],
+    searchedWord: ""
   };
 
   /*--------------------------- Callback Methods ---------------------------*/
@@ -48,6 +50,20 @@ class App extends Component {
     this.setState(state => ({
       books: state.books.filter(b => b._id !== id)
     }), () => this.props.history.push('/'));
+  }
+
+  handleSearch = (e) => {
+    this.setState({searchedWord: e},
+      () => {this.setState({searchedBooks: this.state.books.filter((book) => book.company.toLowerCase().includes(this.state.searchedWord.toLowerCase()))})}
+      )
+  }
+
+  handleReturnSearch = () => {
+    if(this.state.searchedBooks.length > 0){
+      return this.state.searchedBooks
+    } else {
+      return this.state.books
+    }
   }
 
   /*-------------------------- Lifecycle Methods ---------------------------*/
@@ -86,11 +102,13 @@ class App extends Component {
           }/>
             <Route exact path='/' render={({history, location}) =>
               <BookListPage 
-              books={this.state.books}
+              books={this.handleReturnSearch()}
               handleDeleteBook={this.handleDeleteBook}
               user={this.state.user}
               history={history}
               location={location}
+              handleSearch={this.handleSearch}
+              searchedWord={this.state.searchedWord}
               />
             }/>
             
@@ -105,12 +123,7 @@ class App extends Component {
             location={location}
             />
           }/>
-          <Route exact path='/search' render={({history, location}) =>
-            <SearchPage 
-            books={this.state.books}
-            
-            />
-          }/>
+          
         </Switch>
         </main>
       </div>
