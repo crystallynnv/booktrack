@@ -1,41 +1,23 @@
 import React, { Component } from 'react';
+import './SearchBar.css';
 
 class SearchBar extends Component {
-   
-
 
     render() {
         return(
+            <center>
             <div className="ui input">
-                <label >Company Name</label>
+                
+                
                 <input
                 type="text"
                 value={this.props.searchedWord}
-                placeholder="Search"
+                placeholder="Search..."
                 onChange={(e) => this.props.handleSearch(e.target.value)}
                 
                 ></input>
-                
-            
-                {/* <ul>
-						{this.state.filtered.map(item => (
-							<li key={item}>
-								{item} &nbsp;
-								<span
-									className="delete"
-									onClick={() => this.props.delete(item)}
-									/>
-							</li>
-						))}
-					</ul> */}
             </div>
-
-            // if(this.state.filtered.length){
-            //     <div>
-            //     </div>
-            // } else {
-
-            // }
+            </center>
         )
        
     }
