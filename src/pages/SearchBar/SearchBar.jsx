@@ -7,14 +7,11 @@ class SearchBar extends Component {
         return(
             <center>
             <div className="ui input">
-                
-                
                 <input
                 type="text"
                 value={this.props.searchedWord}
-                placeholder="Search..."
+                placeholder="Search by Company"
                 onChange={(e) => this.props.handleSearch(e.target.value)}
-                
                 ></input>
             </div>
             </center>
