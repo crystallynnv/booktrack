@@ -34,7 +34,7 @@ BookTrack was created to help Bookkeepers track their bookkeeping. Once a book i
 
 ### Next Steps: 
 
-- [ ] Search tab to search the books by company name and by received date
+- [x] Search tab to search the books by company name and by received date
 - [ ] Add a sort button on the index page to sort by Company Name
 
 
