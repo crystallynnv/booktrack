@@ -9,6 +9,7 @@ import * as booksAPI from '../../services/book-api';
 import * as userAPI from '../../services/user-api';
 import NavBar from '../../components/NavBar/NavBar';
 import BookListPage from '../BookListPage/BookListPage';
+import SearchPage from '../SearchPage/SearchPage';
 
 class App extends Component {
   state = {
@@ -101,7 +102,7 @@ class App extends Component {
           }/>
             <Route exact path='/' render={({history, location}) =>
               <BookListPage 
-              books={this.handleReturnSearch()}
+              books={this.state.books}
               handleDeleteBook={this.handleDeleteBook}
               user={this.state.user}
               history={history}
@@ -120,6 +121,17 @@ class App extends Component {
             <EditBookPage 
             handleUpdateBook={this.handleUpdateBook}
             location={location}
+            />
+          }/>
+          <Route exact path='/search' render={({history, location}) =>
+            <SearchPage 
+              books={this.handleReturnSearch()}
+              handleDeleteBook={this.handleDeleteBook}
+              user={this.state.user}
+              history={history}
+              location={location}
+              handleSearch={this.handleSearch}
+              searchedWord={this.state.searchedWord}
             />
           }/>
           

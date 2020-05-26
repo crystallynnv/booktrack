@@ -1,15 +1,16 @@
 import React from 'react';
-import './BookListPage.css';
+import SearchBar from '../SearchBar/SearchBar';
 import Book from '../../components/Book/Book';
 
-
-function BookListPage(props) {
+function SearchPage(props) {
 
     if(props.books.length) {
 
     return (
         <>
-        
+        <SearchBar 
+            handleSearch={(e) => props.handleSearch(e)}
+            searchedWord={props.searchedWord}/>
             <h3>Bookkeeping List Page</h3>
             <div>   
             <table className="ui celled table">
@@ -41,9 +42,10 @@ function BookListPage(props) {
     )
     } else {
         return(
-            <h5>Start Tracking Your Bookkeeping by Logging in and Clicking the Add Link!</h5>
+            <h5>Nothing to Search yet!</h5>
         )
     }
 }
 
-export default BookListPage;
+export default SearchPage;
+
