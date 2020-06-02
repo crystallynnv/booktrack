@@ -29,6 +29,7 @@ function BookListPage(props) {
                 {props.books.map(book =>
                 <Book 
                 book={book}
+                history={props.history}
                 key={book._id}
                 user={props.user}
                 handleDeleteBook={props.handleDeleteBook}/>
