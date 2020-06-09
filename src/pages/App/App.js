@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import { Route, Switch } from 'react-router-dom';
+import { Route, Switch, Redirect } from 'react-router-dom';
 import SignupPage from '../SignupPage/SignupPage';
 import LoginPage from '../LoginPage/LoginPage';
 import AddBooksPage from '../AddBooksPage/AddBooksPage';
@@ -10,6 +10,7 @@ import * as userAPI from '../../services/user-api';
 import NavBar from '../../components/NavBar/NavBar';
 import BookListPage from '../BookListPage/BookListPage';
 import SearchPage from '../SearchPage/SearchPage';
+//import WelcomePage from '../WelcomePage/WelcomePage';
 
 class App extends Component {
   state = {
@@ -69,8 +70,10 @@ class App extends Component {
   /*-------------------------- Lifecycle Methods ---------------------------*/
 
   async componentDidMount() {
-    const books = await booksAPI.getAll();
-    this.setState({books});
+    const books = await booksAPI.index();
+    this.setState({ books });
+    console.log('Mounted')
+    console.log(books)
   }
 
   /*-------------------------------- Render --------------------------------*/
@@ -101,19 +104,19 @@ class App extends Component {
             />
           }/>
             <Route exact path='/' render={({history, location}) =>
+            userAPI.getUser() ? 
               <BookListPage 
               books={this.state.books}
               handleDeleteBook={this.handleDeleteBook}
               user={this.state.user}
               history={history}
               location={location}
-              handleSearch={this.handleSearch}
-              searchedWord={this.state.searchedWord}
               />
+              :
+              <Redirect to='/login' />
             }/>
             
           <Route exact path='/addBooks' render={() => 
-            // userAPI.getUser() ? 
               <AddBooksPage handleAddBook={this.handleAddBook}/>
             
           }/>

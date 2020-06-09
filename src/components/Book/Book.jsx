@@ -1,7 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 
-const Book = ({book, handleDeleteBook}) => 
+const Book = ({book, handleDeleteBook, history}) => 
   
 
   

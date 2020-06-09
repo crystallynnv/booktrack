@@ -20,8 +20,8 @@ async function deleteOne(req, res) {
 }
 
 async function index(req, res) {
-  req.body.user = req.user._id
-  const books = await Book.find({user: req.user._id});
+  
+  const books = await Book.find({});
   res.status(200).json(books);
 
 }

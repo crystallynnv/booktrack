@@ -2,12 +2,24 @@ import tokenService from './tokenService';
 
 const BASE_URL = '/api/books';
 
-export function getAll() {
-  return fetch(BASE_URL, {
+// export function getAll() {
+//   const options = {
+//     method: 'GET',
+//     headers: {
+//       'Authorization': 'Bearer ' + tokenService.getToken()
+//     }
+//   };
+//   return fetch(BASE_URL, options).then((res) => res.json());
+// }
+
+export function index() {
+  const options = {
+    method: 'GET',
     headers: {
-             'Authorization': 'Bearer ' + tokenService.getToken()
-           }
-  })
+      'Authorization': 'Bearer ' + tokenService.getToken()
+    }
+  };
+  return fetch(BASE_URL, options, {mode: "cors"})
   .then(res => res.json());
 }
 
